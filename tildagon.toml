@@ -28,7 +28,7 @@ author = "grimmware"
 license = "WTFPL"
 
 # URL to the repository of your app.
-url = "https://git.sr.ht/~grimmware/tildagon-pentagram-app"
+url = "https://github.com/oholiab/tildagon-pentagram-app"
 
 # Description of your app.  Maximum 140 characters!
 description = "EMF 2024 App to invoke dark powers."
