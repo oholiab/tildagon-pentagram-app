@@ -37,4 +37,4 @@ description = "EMF 2024 App to invoke dark powers."
 # increased, we interpret this as a new version being released.
 #
 # Version number must be an integer!
-version = "0.0.1"
+version = "0.0.2"

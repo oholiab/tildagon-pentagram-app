@@ -20,8 +20,8 @@ class PentApp(app.App):
         self.offset = 0
         self.points = PentApp.genpoints(self.n, self.offset)
         eventbus.emit(PatternDisable())
-        for i in range(0, 12):
-            tildagonos.leds[i] = (0, 0, 0)
+        for i in range(12):
+            tildagonos.leds[i+1] = (0, 0, 0)
 
     @staticmethod
     def genpoints(n, offset):
@@ -43,8 +43,8 @@ class PentApp(app.App):
             self.offset = self.offset + 2/delta
         self.points = PentApp.genpoints(self.n, self.offset)
 
-        for i in range(0, 12):
-            tildagonos.leds[i] = (int(255 * math.sin(self.offset)) , 0, 0)
+        for i in range(12):
+            tildagonos.leds[i+1] = (int(255 * math.sin(self.offset)) , 0, 0)
 
         if self.button_states.get(BUTTON_TYPES["CANCEL"]):
             # The button_states do not update while you are in the background.
