@@ -47,6 +47,11 @@ class PentApp(app.App):
             tildagonos.leds[i+1] = (int(255 * math.sin(self.offset)) , 0, 0)
 
         if self.button_states.get(BUTTON_TYPES["CANCEL"]):
+            # The "off" pattern doesn't overwrite LEDs with (0,0,0) so we do just in case
+            for i in range(12):
+                tildagonos.leds[i+1] = (0, 0, 0)
+            # The default pattern isn't re-enabled unless you enable it
+            eventbus.emit(PatternEnable())
             # The button_states do not update while you are in the background.
             # Calling clear() ensures the next time you open the app, it stays open.
             # Without it the app would close again immediately.
